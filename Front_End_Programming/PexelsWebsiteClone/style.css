@@ -1,0 +1,327 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap"); 
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"); 
+* {  
+ margin: 0;  
+ padding: 0;  
+ box-sizing: border-box;  
+ font-family: "Poppins", sans-serif;  
+ text-align: center;  
+ scroll-behavior: smooth;  
+}  
+@mixin same {  
+ display: flex;  
+ justify-content: center;  
+ align-items: center;  
+ flex-direction: column;  
+ height: 80%;  
+}  
+/* primarycolor: #fff;  
+secondarycolor: #05a081;   */
+/* //Start hero   */
+.top {  
+ width: 20px;  
+ height: 20px;  
+ border-radius: 50%;  
+ position: fixed;  
+ bottom: 120px;  
+ right: 80px;  
+ z-index: 1000;  
+ filter: drop-shadow(3px 6px 4px rgba(0, 0, 0, 0.4));  
+}  
+.top img {  
+ width: 70px;  
+ height: 70px;  
+ border-radius: 50%;  
+}  
+.hero {  
+ background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),  
+  url(https://i.postimg.cc/FRY8f6KQ/pexels-andrea-piacquadio-3776169.jpg);  
+ background-size: cover;  
+ background-position: center;  
+ background-repeat: no-repeat;  
+ height: 65vh;  
+ width: 100%;  
+ padding: 0 40px 0 40px; } 
+ nav{  
+    display: flex;  
+    justify-content: space-between;  
+    align-items: center;  
+    padding-top: 20px;  
+   }  
+ nav .logo {  
+  width: 120px;  
+ }  
+ nav ul {  
+  flex: 1;  
+  text-align: right;  
+  cursor: pointer;  
+ }  
+ nav ul li {  
+  display: inline-block;  
+  margin: 13px;  
+  color: primarycolor;  
+  font-size: 1.2em;  
+ }  
+ nav ul li:hover {  
+  opacity: 0.5;  
+ }  
+ .upload {  
+  text-decoration: none;  
+  color: primarycolor;  
+  background: secondarycolor;  
+  padding: 5px 10px;  
+  border-radius: 4px;  
+  transition: 0.5s;  
+ }  
+ .upload:hover {  
+  opacity: 0.7;  
+  transform: translateY(-10px);  
+ }  
+ .content {  
+    @mixin: same;  
+ }  
+ .content h1 {  
+  font-size: 2.3em;  
+  color: primarycolor;  
+  margin-bottom: -20px;  
+ }  
+ .content h1:hover {  
+  opacity: 0.5;  
+ }  
+ .find {  
+  width: 60%;  
+  max-width: 840px;  
+  padding: 0 20px;  
+  margin: 20px 0px;  
+  height: 55px;  
+  border-radius: 5px;  
+  border: none;  
+  outline: none;  
+  font-size: 1em;  
+ }  
+ ::placeholder {  
+  font-weight: 500;  
+  font-size: 16px;  
+ }  
+ .content p {  
+  color: primarycolor;  
+ }  
+ .content p a {  
+  color: primarycolor;  
+  text-decoration: none;  
+ }  
+ .content p a:hover {  
+  color: secondarycolor;  
+ }  
+
+navbar {  
+ display: flex;  
+ justify-content: Center;  
+ align-items: center;  
+ border-bottom: 2px solid secondarycolor;  
+ padding: 0 20px 0 20px;  
+ text-align: center;  
+}  
+navbar ul {  
+ display: flex;  
+}  
+navbar ul li {  
+ list-style: none;  
+ margin: 20px 20px;  
+ font-size: 1.2em;  
+ cursor: pointer;  
+}  
+navbar ul li:hover {  
+ color: secondarycolor;  
+}  
+navbar .active {  
+ border-bottom: 2px solid secondarycolor;  
+}  
+/* //End Gallery  
+//Start hero   */
+.prev,  
+.next {  
+ position: fixed;  
+ top: 0;  
+ width: 15%;  
+ height: 100%;  
+ display: flex;  
+ align-items: center;  
+ justify-content: center;  
+ text-decoration: none;  
+ z-index: 999;  
+ color: rgba(255, 255, 255, 0.5);  
+ font-size: 8rem;  
+ font-family: monospace;  
+ transition: all 0.2s;  
+}  
+.prev:hover,  
+.next:hover {  
+ color: rgba(255, 255, 255, 0.8);  
+}  
+.prev {  
+ left: -25%;  
+}  
+.next {  
+ right: -25%;  
+}  
+.active .prev {  
+ left: 0;  
+}  
+.active .next {  
+ right: 0;  
+}  
+h1 {  
+ margin-top: 20px;  
+ padding: 20px;  
+ color: #5d5d5d;  
+ font-size: 2.4em;  
+}  
+.container {  
+ margin: 1vh auto;  
+ max-width: 90%;  
+ display: grid;  
+ grid-gap: 5px;  
+ grid-template-columns: rep eat(auto-fill, minmax(250px, 1fr));  
+ grid-auto-rows: 250px;  
+ grid-auto-flow: dense;  
+}  
+.container div {  
+ text-align: center;  
+ padding: 10px;  
+ color: white;  
+ font-size: 3rem;  
+ text-transform: uppercase;  
+ overflow: hidden;  
+ display: flex;  
+ align-items: stretch;  
+ justify-content: center;  
+}  
+.container div img {  
+ width: 100%;  
+ height: 100%;  
+ display: block;  
+ object-fit: cover;  
+ object-position: center;  
+ transition: all 0.5s;  
+}  
+.container div.show::before {  
+ content: "";  
+ display: block;  
+ position: fixed;  
+ z-index: 555;  
+ width: 100vw;  
+ height: 100vh;  
+ top: 0;  
+ left: 0;  
+ background: rgba(0, 0, 0, 0.6);  
+}  
+.container div.show img {  
+ position: fixed;  
+ top: 0;  
+ left: 0;  
+ margin: 30px;  
+ align-self: center;  
+ object-fit: contain;  
+ z-index: 666;  
+ width: calc(100% - 60px);  
+ height: calc(100% - 60px);  
+ filter: drop-shadow(0 3px 15px black);  
+ cursor: url(close-button.png), grab; /* custom cursor to signal close on click */  
+}  
+.container div:not(.show):hover img {  
+ cursor: pointer;  
+ transform: scale(1.3);  
+}  
+.horizontal {  
+ grid-column: span 2;  
+}  
+.vertical {  
+ grid-row: span 2;  
+}  
+.big {  
+ grid-column: span 2;  
+ grid-row: span 2;  
+}  
+.active .container div:not(.show) img {  
+ filter: blur(3px);  
+}  
+.explore {  
+ width: 60%;  
+ background: secondarycolor;  
+ height: 50px;  
+ font-size: 1.2em !important;  
+ text-align: center;  
+ position: relative;  
+ left: 70%;  
+ top: 20px;  
+ border-radius: 10px;  
+ transition: 0.4s;  
+}  
+.explore:hover {  
+ opacity: 0.7;  
+ transform: scale(1.2);  
+}  
+/* //End Gallery  
+// Start Customer   */
+.customer {  
+ padding: 0 40px 0 40px;  
+ box-sizing: border-box;  
+}  
+.customer h1 {  
+ position: relative;  
+ top: -120px;  
+ color: #5d5d5d;  
+ font-size: 2em;  
+}  
+.customer .row {  
+ display: flex;  
+ justify-content: space-between;  
+ align-items: center;  
+ position: relative;  
+ top: -80px;  
+}  
+.customer .row .col {  
+ flex-basis: 25%;  
+ text-align: Center;  
+ padding: 6px;  
+}  
+.customer .row .col img {  
+ width: 90%;  
+ transition: 0.4s;  
+}  
+.customer .row .col img:hover {  
+ transform: translateY(-10px);  
+}  
+/* // End Customer  
+// Start About Me   */
+.about {  
+ padding: 0 40px 0 40px;  
+ margin: 30px;  
+}  
+.about h1 {  
+ position: relative;  
+ top: -50px;  
+ color: #5d5d5d;  
+ font-size: 2em;  
+}  
+.about p {  
+ position: relative;  
+ top: -30px;  
+ padding: 10px;  
+ line-height: 2;  
+ text-align: justify;  
+}  
+/* // End About Me  
+// Start footer   */
+footer {  
+ background: #ebebeb;  
+ height: 50px;  
+}  
+footer p {  
+ line-height: 50px;  
+ font-size: 1.3em;  
+ color: #000;  
+ letter-spacing: 2px;  
+}  
+/* // End Footer  */
